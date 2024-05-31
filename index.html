@@ -19,12 +19,79 @@
     />
 
     <link rel="stylesheet" href="./style.css" />
+
     <title>Not TO DO Bucket List</title>
   </head>
   <body>
-    <h1>Hello from the lazy world</h1>
-    <button class="btn btn-danger">
-      ClickMe <i class="fa-solid fa-house"></i>
-    </button>
+    <div class="wrapper pt-5">
+      <div class="container">
+        <h1 class="text-center">Not To Do BucketList</h1>
+
+        <!-- form -->
+        <form
+          onsubmit="handleOnSubmit(this)"
+          action="javascript:void(0)"
+          class="border p-5 rounded shadow-lg mt-5"
+        >
+          <div class="row g-3">
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Your Bucket List"
+                aria-label="First name"
+                name="task"
+                id="task"
+              />
+            </div>
+            <div class="col-md-2">
+              <input
+                type="number"
+                class="form-control"
+                placeholder="40"
+                aria-label="Last name"
+                name="hr"
+                min="1"
+              />
+            </div>
+            <div class="col-md-3 d-grid">
+              <button class="btn btn-secondary text-white">Add New Task</button>
+            </div>
+          </div>
+        </form>
+        <!-- tables -->
+        <div class="row mt-5">
+          <!-- EntryList -->
+          <div class="col-md mt-5 bg-transparent">
+            <h3 class="text-center">Entry List</h3>
+            <hr />
+            <table
+              class="table table-dark table-striped table-hover border rounded"
+            >
+              <tbody id="entryList"></tbody>
+            </table>
+          </div>
+
+          <!-- BadList -->
+          <div class="col-md mt-5 bg-transparent">
+            <h3 class="text-center">Bad List</h3>
+            <hr />
+            <table
+              class="table table-dark table-striped table-hover border rounded"
+            >
+              <tbody id="badList"></tbody>
+            </table>
+            <div class="alert alert-success">
+              You Could Have Saved <span id="savedHours">0</span> hrs
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-success mt-5">
+          Total hours Allocated to <span id="totalHours">0</span> hours
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>
